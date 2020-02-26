@@ -1,0 +1,9 @@
+@import '../../../styles/colors';
+
+.mod-bar{
+    display: flex;
+    flex-direction: row;
+    // background: lighten($base_color, 30%);
+    margin: 10px 0;
+    padding: 12px 6px;
+}

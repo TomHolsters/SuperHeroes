@@ -1,0 +1,19 @@
+$white: #f4f4f4;
+$black: #080808;
+$light-blue:#80b0b0;
+$blue: #609090;
+
+$background: $white;
+$base-color: $light-blue;
+$highlight-color: lighten($base-color, 5%);
+$highlight-dark-color: darken($base-color, 10%);
+$dark-color: darken($base-color, 20%);
+
+$border-color: $blue;
+
+
+$grey: #3F4748;
+$sea-blue: #1D6581;
+$sea-green: #80B0B0;
+$egg: #EBE8DE;
+$red: #DC4055;

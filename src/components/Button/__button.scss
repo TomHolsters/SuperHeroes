@@ -1,0 +1,46 @@
+@import "../../styles/colors";
+
+$offset: 2px;
+$blur: $offset * 1;
+$spread: 0;
+$change: 10%;
+$color: lighten($base_color, 30%);
+
+.button {
+  background-color: $color;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-right: 10px;
+  box-shadow: $offset $offset $blur $spread darken($color, $change * 1.25), $offset * -1 $offset * -1 $blur $spread lighten($color, $change * 1.25);
+  border: 1px solid transparent;
+  color: darken($blue, 10%);
+  cursor: pointer;
+  transition: 0.3s;
+  &.disabled {
+    box-shadow: $offset $offset $blur $spread darken($color, 0), $offset * -1 $offset * -1 $blur $spread lighten($color, 0);
+    background: lighten($color, 3.5%);
+    cursor: not-allowed;
+  }
+  &:not(.disabled) {
+    &:hover {
+      color: darken($blue, 35%);
+      background-color: lighten($color, 3%);
+      box-shadow: $offset $offset $blur $spread darken($color, $change * 2), $offset * -1 $offset * -1 $blur $spread lighten($color, $change * 2);
+    }
+    &:active {
+      box-shadow: $offset / 2 $offset / 2 $blur $spread darken($color, $change * 2), $offset * -1 / 2 -1 * $offset / 2 $blur $spread lighten($color, $change * 2);
+      background-color: lighten($color, 7.5%);
+    }
+  }
+  &.delete {
+    background-color: $red;
+    color: darken($egg, 20%);
+    box-shadow: $offset * 0.75 $offset * 0.75 $blur $spread darken($red, $change * 2), $offset * -0.75 $offset * -0.75 $blur $spread lighten($red, $change * 2);
+
+    &:hover {
+      color: $egg;
+      background-color: lighten($red, 3%);
+      box-shadow: $offset * .5 $offset * .5 $blur $spread darken($red, $change * 2), $offset * -.5 $offset * -.5 $blur $spread lighten($red, $change * 2);
+    }
+  }
+}

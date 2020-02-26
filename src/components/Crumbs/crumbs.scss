@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+
+.crumbs {
+  display: block;
+  border-bottom: 1px solid #d2d2d2;
+  font-size: 1.6rem;
+  background-color: lighten($sea-green, 20%);
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+
+    & li {
+      padding: 8px 12px 6px 20px;
+      position: relative;
+      &:not(:first-of-type) {
+        padding-left: 8px;
+      }
+      &:not(:last-of-type):after {
+        content: ">";
+        font-size: .9em;
+        margin-left: 12px;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: transparentize($sea-green, .3);
+      }
+    }
+  }
+}

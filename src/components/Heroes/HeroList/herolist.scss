@@ -1,0 +1,29 @@
+@import '../../../styles/colors';
+
+.herolist {
+  ul {
+    margin: 0;
+    padding: 10px 24px;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      padding: 8px 4px;
+      font-size: 1.4rem;
+
+      &:hover {
+          & a span {
+        background: lighten($blue, 30%);
+          border-bottom: 2px dashed red;
+        }
+      }
+
+      & a {
+        display: block;
+        & span {
+            padding: 2px 4px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+hero-page-container {
+  & article {
+    & .name {
+      color: #b43015;
+    }
+    & .bold {
+      font-weight: bold;
+    }
+  }
+}
