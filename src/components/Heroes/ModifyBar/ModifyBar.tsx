@@ -55,7 +55,7 @@ const toggleModal = () => {
             clickCallBack={handleAdd}
           />
           <Modal
-            toggle={showAddModal}
+            toggle={toggleModal}
             type='Add'
             title={`Add a new superhero`}
             content={`Form goes here`}>
@@ -66,7 +66,7 @@ const toggleModal = () => {
       ) : (
         <>
           <Button text='Edit' disabled={false} clickCallBack={handleEdit} />
-          <Modal toggle={showEditModal} type='edit' title={`Edit ${heroName}`}>
+          <Modal toggle={toggleModal} type='edit' title={`Edit ${heroName}`}>
             <Button
               text='Cancel'
               disabled={false}
@@ -85,7 +85,7 @@ const toggleModal = () => {
             clickCallBack={handleDelete}
           />
           <Modal
-            toggle={showDeleteModal}
+            toggle={toggleModal}
             type='delete'
             title={`Confirm deletion of ${heroName}`}
             content={`Are you sure you want to delete ${heroName}?`}>
