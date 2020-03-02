@@ -1,0 +1,31 @@
+.hero-page-container {
+  width: 100%;
+  position: relative;
+  & article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    & .col {
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px;
+      align-items: left;
+      position: relative;
+
+      & img {
+        height: auto;
+        width: 200px;
+      }
+      & .name {
+        color: #b43015;
+      }
+      & .bold {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.emoji{
+  font-weight: normal;
+}

@@ -1,36 +1,23 @@
-export class Hero {
+export interface IHero {
+    Id: number;
+    Age: number;
+    Name: string;
+    Power: string;
+    Country: string;
+    ImgUri: string;
+    LogoImgUri: string;
+}
 
-    private Id: number;
-    public get id() : number {
-        return this.Id;
-    }
-    public set id(v : number) {
-        this.Id = v;
-    }
-    
+export class Hero { //implements IHero {
+    private _id: number;
+    public get Id(): number { return this._id; }
+    public set Id(v: number) { this._id = v; }
 
-    private _power: string;
-    public get power(): string { return this._power; }
-    public set power(v: string) { this._power = v; }
-
-    private _country: string;
-    public get country(): string { return this._country; }
-    public set country(v: string) { this._country = v; }
-
-    private _age: number;
-    public get age(): number { return this._age; }
-    public set age(v: number) { this._age = v; }
-
-    private _name: string;
-    public get name(): string { return this._name; }
-    public set name(v: string) { this._name = v; }
-
-    constructor(id: number, name: string, age: number, power: string, country: string) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.power = power;
-        this.country = country;
-    }
-
+    constructor(
+        private Name: string,
+        private Age: number,
+        private Power: string,
+        private Country: string,
+        private ImgUri: string,
+        private LogoImgUri: string) { }
 }

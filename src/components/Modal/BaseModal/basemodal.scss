@@ -1,0 +1,53 @@
+@import "../../../styles/colors";
+
+div.modal-container {
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: transparentize(lighten($base_color, 30%), .15);
+  z-index: 999;
+  & .modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 70vh;
+    width: 50vw;
+    background-color: lighten($base_color, 30%);
+    border: 10px solid $light-blue;
+    
+    & .close-modal{
+      position: absolute;
+      cursor: pointer;
+      right: 0px;
+      top: 0px;
+      border: 1 px solid red;
+      padding: 6px;
+      color: lighten($black, 25%);
+      &:hover{
+        background: lighten($sea-green, 15%);
+        color: $black;
+      }
+    }
+
+    & .title {
+      flex: 7.5%;
+      & h1{
+        margin-bottom: 0;
+      }
+    }
+    & .content {
+      flex: 85%;
+    }
+    & .buttons {
+      flex: 7.5%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

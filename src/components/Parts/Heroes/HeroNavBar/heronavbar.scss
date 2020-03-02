@@ -1,0 +1,25 @@
+.hero-nav-bar {
+  position: absolute;
+  display: flex;
+  padding: 10px 40px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  & .nav-button {
+    font-size: 4rem;
+    cursor: pointer;
+    color: transparent;
+    text-shadow: 0 0 2px orange;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.25);
+      color: black;
+    }
+    & .previous {
+    }
+    & .next {
+    }
+  }
+}

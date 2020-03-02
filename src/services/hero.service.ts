@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { API_BASE_URL } from '../config/config'
-import * as action from '../state/actions/actions'
+import * as mapper from '../services/hero.mapper.service'
+import * as action from '../state/hero/actions/actions'
 
-const heroUrl = `${API_BASE_URL}/Heroes`
+const heroUrl = `${API_BASE_URL}/Heroes`;
 
 export const getHero = (id) => {
     return dispatch => {
@@ -18,13 +19,13 @@ export const getHeroes = () => {
         axios.get(heroUrl)
             .then(res => {
                 dispatch(action.fetchHeroes(res.data))
-            });
+            })
     };
 }
 
-export const addHero = (hero, pos) => {
+export const addHero = (hero) => {
     return dispatch => {
-        axios.post(heroUrl, { title: hero })
+        axios.post(heroUrl, mapper.mapFeHeroToBeHero(hero))
             .then(res => {
                 dispatch(action.postHero(res.data))
             })
