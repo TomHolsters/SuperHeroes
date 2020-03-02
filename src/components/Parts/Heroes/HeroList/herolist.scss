@@ -19,12 +19,16 @@
         }
       }
 
-      & .hero-head {
+      & .hero-head,
+      & .hero-no-head {
         position: absolute;
         left: -28px;
         top: 0px;
-        height: auto;
-        width: 24px;
+        width: auto;
+        height: 24px;
+      }
+      & .hero-no-head {
+        left: -36px;
       }
       & a {
         display: block;

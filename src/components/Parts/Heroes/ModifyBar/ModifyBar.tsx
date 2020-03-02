@@ -19,11 +19,12 @@ export default function ModifyBar() {
   const [_heroes, setHeroes] = useState([])
   const heroes: Array<IHero> = useSelector(state => state.heroes)
 
-  // useEffect(() => {
-  //   if (_heroes.length > 0 && heroes.length !== _heroes.length){
-  //     history.push('/heroes')
-  //   }
-  // }, [heroes])
+  useEffect(() => {
+    if (_heroes.length > 0 && heroes.length !== _heroes.length) {
+      console.log('deleted')
+      setTimeout(history.push('/heroes'), 1000)
+    }
+  }, [heroes])
 
   useEffect(() => {
     console.log('change')

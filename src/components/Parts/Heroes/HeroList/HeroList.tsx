@@ -37,7 +37,7 @@ export default function HeroList() {
                   {h.LogoImgUri && h.LogoImgUri !== '' ? (
                     <img className='hero-head' src={h.LogoImgUri}></img>
                   ) : (
-                    <span className='hero-head' >{emo()} </span>
+                    <span className='hero-no-head' >{emo()} </span>
                   )}
                   <span className="hero-name"> {h.Name} </span>
                 </Link>
