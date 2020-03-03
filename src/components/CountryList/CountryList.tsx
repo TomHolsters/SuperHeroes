@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
-export default function CountryList({countryCB: countryCallBack}) {
-  let [country, setCountry] = useState('');
+export default function CountryList({country = '', countryCB: countryCallBack}) {
+  const [_country, setCountry] = useState(country);
 
-  countryCallBack(country);
+  countryCallBack(_country);
 
   return (
       <select name='Country' id='country' 
-      value={country}
+      value={_country}
       onChange={e => setCountry(e.target.value)}
       >
         <option value='' defaultChecked={true}>

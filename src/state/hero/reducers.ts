@@ -59,7 +59,7 @@ export const heroReducer = (state = initialState, action) => {
         case actionType.UPDATE_HERO: {
             return {
                 ...state,
-                heroes: state.heroes.map(hero => hero._id === action.payload._id ? hero = { ...hero, title: action.payload.title } : hero)
+                heroes: state.heroes.map(hero => hero._id === action.payload._id ? action.payload : hero)
             }
         }
 

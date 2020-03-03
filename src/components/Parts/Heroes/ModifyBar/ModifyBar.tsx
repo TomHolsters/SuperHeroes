@@ -7,31 +7,28 @@ import './modifybar.scss'
 import ConfirmModal from '../../../Modal/ConfirmModal/ConfirmModal'
 import EditModal from '../../../Modal/EditModal/EditModal'
 import { IHero } from '../../../../models/Hero'
-import * as heroService from '../../../../services/hero.service'
 
 export default function ModifyBar() {
   const history = useHistory()
   const { id } = useParams()
 
+  const heroes: Array<IHero> = useSelector(state => state.heroes)
   const [addModal, setAddModal] = useState(false)
   const [deleteModal, setDeleteModal] = useState(false)
   const [editModal, setEditModal] = useState(false)
-  const [_heroes, setHeroes] = useState([])
-  const heroes: Array<IHero> = useSelector(state => state.heroes)
+  const [_heroes, setHeroes] = useState(heroes)
+  const hero: IHero = useSelector(state => state.hero)
 
+  useEffect(() => setHeroes(heroes), [])
+
+  
   useEffect(() => {
-    if (_heroes.length > 0 && heroes.length !== _heroes.length) {
-      console.log('deleted')
-      setTimeout(history.push('/heroes'), 1000)
-    }
+    if (_heroes.length > 0 && heroes.length > 0 && heroes.length !== _heroes.length)  
+     history.push('/heroes')
   }, [heroes])
 
-  useEffect(() => {
-    console.log('change')
-    setHeroes(heroes)
-  }, [])
-
   const saveHero = () => setAddModal(false)
+  const updateHero = () => setEditModal(false)
 
   const handleAddModal = () => setAddModal(!addModal)
   const handleDeleteModal = () => setDeleteModal(!deleteModal)
@@ -44,7 +41,11 @@ export default function ModifyBar() {
           <>
             <Button text='Edit' disabled={false} onClick={handleEditModal} />
             {editModal ? (
-              <EditModal onClose={() => handleEditModal()} onSave={null} />
+              <EditModal
+                _hero={hero}
+                onClose={handleEditModal}
+                onUpdate={updateHero}
+              />
             ) : null}
             <Button
               text='Delete'

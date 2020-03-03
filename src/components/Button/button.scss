@@ -16,6 +16,7 @@ $color: lighten($base_color, 40%);
     background: lighten($color, 3.5%);
     color: lighten($grey, 30%);
     box-shadow: 0 0 0 1px lighten($grey, 50%);
+    opacity: .25;
     cursor: not-allowed;
   }
   &:not(.disabled) {

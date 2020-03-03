@@ -7,9 +7,9 @@ import CreateHero from '../../Parts/Heroes/CreateHero/CreateHero'
 import { Hero } from '../../../models/Hero'
 
 export default function CreateHeroModal({ onClose, onSave }) {
-  let _hero: Hero;
   const dispatch = useDispatch();
-  let [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(true);
+  let _hero: Hero;
 
   const getData = (hero: Hero) => {
     setDisabled(Object.values(hero).filter(v => v === '').length !== 0)

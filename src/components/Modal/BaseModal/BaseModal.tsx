@@ -1,12 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './basemodal.scss'
 
-export default function BaseModal({
-  title = 'Title',
-  content,
-  buttons,
-  onClose,
-}) {
+export default function BaseModal({ title, content, buttons, onClose }) {
   const closeModal = () => {
     onClose()
   }
@@ -15,6 +10,19 @@ export default function BaseModal({
     e.stopPropagation()
     e.preventDefault()
   }
+  const escFunction = event => {
+    if (event.keyCode === 27) {
+      closeModal()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', escFunction, false)
+
+    return () => {
+      document.removeEventListener('keydown', escFunction, false)
+    }
+  }, [])
 
   const edit = () => {
     return (
@@ -25,17 +33,19 @@ export default function BaseModal({
     )
   }
 
-  return (<div className='modal-container' onClick={closeModal}>
-    <div className='modal' onClick={insideClick}>
-      <div className='close-modal' onClick={closeModal}>
-        X
-      </div>
-      <div className='title'>
-        <h1>{title}</h1>
-      </div>
-      <div className='content'>{content}</div>
+  return (
+    <div className='modal-container' onClick={closeModal}>
+      <div className='modal' onClick={insideClick}>
+        <div className='close-modal' onClick={closeModal}>
+          X
+        </div>
+        <div className='title'>
+          <h1>{title}</h1>
+        </div>
+        <div className='content'>{content}</div>
 
-      <div className='buttons'>{buttons}</div>
+        <div className='buttons'>{buttons}</div>
+      </div>
     </div>
-  </div>)
+  )
 }

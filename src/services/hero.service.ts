@@ -32,11 +32,11 @@ export const addHero = (hero) => {
     };
 }
 
-export const updateHero = (value, id) => {
+export const updateHero = (hero, id) => {
     return dispatch => {
-        axios.patch(`${heroUrl}/${id}`, { title: value })
+        axios.put(`${heroUrl}/${id}`, hero)
             .then(res => {
-                dispatch(action.putHero({ _id: id, title: value }))
+                dispatch(action.putHero({ _id: id, hero: hero }))
             })
     };
 }
