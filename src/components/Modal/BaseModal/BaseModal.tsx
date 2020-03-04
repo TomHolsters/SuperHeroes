@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './basemodal.scss'
 
-export default function BaseModal({ title, content, buttons, onClose }) {
+export default function BaseModal({ title, content, buttons = null, onClose }) {
   const closeModal = () => {
     onClose()
   }

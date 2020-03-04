@@ -97,7 +97,7 @@ export default function CreateHero({ returnData }) {
           </div>
         </div>
 
-        <div className='row'>
+        <div className='row img-row'>
           <div className='col'>
             {imgLoadError ? (
               <Error msg='Image not found'/>

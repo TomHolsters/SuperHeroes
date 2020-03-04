@@ -1,11 +1,11 @@
 import React from 'react';
-import { Hero } from '../../../../models/Hero';
+import { IHero } from '../../../../models/Hero';
 
-export default function HeroListItem (hero: Hero) {
+export default function HeroListItem (hero: IHero) {
     
     return(
         <>
-          <p>{hero.name}</p>  
+          <p>{hero.Name}</p>  
         </>
     )
 }

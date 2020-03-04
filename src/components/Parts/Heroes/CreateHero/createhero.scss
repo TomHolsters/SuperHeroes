@@ -6,11 +6,15 @@
   justify-content: space-between;
   flex-direction: column;
   flex-wrap: nowrap;
+  min-width: 35vw;
+
   & .row {
     display: flex;
     flex-direction: row;
     padding: 8px 0;
-
+    justify-content: space-between;
+    width: 100%;
+    
     .col-full {
       width: 100%;
       & input,
@@ -18,13 +22,13 @@
         padding: 2px 8px;
         border: none;
         border-radius: 8px;
-        width: 82%;
+        width: 85%;
       }
     }
     .col {
-      width: 40%;
-      margin-right: 10%;
+      width: 48%;
       position: relative;
+      display: flex;
 
       & label {
         display: inline-block;
@@ -41,13 +45,18 @@
         }
       }
     }
-    .img-preview {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 100%;
-      width: auto;
-      height: 100px;
+    &.img-row {
+      display: flex;
+      flex-direction: row;
+      & .col {
+        display: flex;
+        justify-content: center;
+        & .img-preview {
+          max-width: 50%;
+          width: auto;
+          max-height: 100px;
+        }
+      }
     }
   }
   & label {

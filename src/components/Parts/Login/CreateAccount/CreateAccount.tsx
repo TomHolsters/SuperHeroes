@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function AboutPage () {
+export default function CreateAccount () {
     
     return(
         <>
-            <h1>About</h1>
+            Create an account
         </>
     )
 }

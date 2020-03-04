@@ -1,0 +1,15 @@
+@import '../../../styles/colors';
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  & span {
+    border-bottom: 1px dashed $grey;
+    cursor: pointer;
+    &:hover {
+      color: $red;
+      border-bottom: 1px dashed $red;
+    }
+  }
+}

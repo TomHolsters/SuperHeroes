@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
 import Error from '../../../Error/Error'
 import CountryList from '../../../CountryList/CountryList'
-import { IHero, Hero } from '../../../../models/Hero'
 
 export default function EditHero({ hero, returnData }) {
   const [name, setName] = useState(hero.Name)
   const [age, setAge] = useState(hero.Age)
   const [power, setPower] = useState(hero.Power)
-  const [country, setCountry] = useState(hero.Country ? hero.Country : '')
+  const [country, setCountry] = useState(hero.Country)
   const [imgUri, setImgUri] = useState(hero.ImgUri ? hero.ImgUri : '')
   const [logoImgUri, setLogoImgUri] = useState(
     hero.LogoImgUri ? hero.LogoImgUri : '',
@@ -27,19 +25,14 @@ export default function EditHero({ hero, returnData }) {
 
     returnData(_hero)
   }
-
-  // const changeForm = e => {
-  //   if (e.target.value.trim() === '' || e.target.value === null)
-  //     returnData(convertToUpper(e.target.name), null)
-  //   else if (e.target.name !== 'age')
-  //     returnData(convertToUpper(e.target.name), e.target.value)
-  //   else returnData(convertToUpper(e.target.name), parseInt(e.target.value))
-  // }
-
+  
   const setImg = e => {
     if (e.target.name === 'imgUri') {
       setImgLoadError(false)
-      setImgUri(e.target.value)
+      let uri = e.target.value;
+      if(e.target.value.trim === '' || e.target.value === undefined)
+        uri = 
+      setImgUri(uri)
     } else {
       setLogoImgLoadError(false)
       setLogoImgUri(e.target.value)
@@ -117,7 +110,7 @@ export default function EditHero({ hero, returnData }) {
             </div>
           </div>
 
-          <div className='row'>
+          <div className='row img-row'>
             <div className='col'>
               {imgLoadError ? (
                 <Error msg='Image not found' />

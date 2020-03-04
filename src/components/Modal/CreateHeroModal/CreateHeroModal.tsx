@@ -36,7 +36,7 @@ export default function CreateHeroModal({ onClose, onSave }) {
 
   return (
     <BaseModal
-      title={`Add a new superhero`} // ${_hero ? ': ' + _hero.name : ''}`}
+      title={`Add a new superhero`}
       buttons={buttons}
       content={content}
       onClose={onClose} />

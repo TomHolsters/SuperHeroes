@@ -5,6 +5,7 @@ import * as heroService from '../../../../services/hero.service'
 import ModifyBar from '../ModifyBar/ModifyBar'
 import { IHero } from '../../../../models/Hero'
 import HeroNavBar from '../HeroNavBar/HeroNavBar'
+import unknown from '../../../../assets/unknown.png'
 import './heropage.scss'
 
 export default function HeroPage() {
@@ -76,7 +77,9 @@ export default function HeroPage() {
             <div className='col'>
               {hero.ImgUri !== '' && hero.ImgUri ? (
                 <img src={hero.ImgUri} alt={hero.Name} />
-              ) : null}
+              ) : 
+              
+                  <img src={unknown} />}
             </div>
           </article>
         </div>
