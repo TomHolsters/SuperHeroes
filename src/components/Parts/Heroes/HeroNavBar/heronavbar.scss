@@ -1,0 +1,21 @@
+.hero-nav-bar {
+  position: absolute;
+  display: flex;
+  padding: 0 40px;
+  margin: 40px 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: top;
+  & .nav-button {
+    font-size: 4rem;
+    cursor: pointer;
+    color: transparent;
+    text-shadow: 0 0 2px orange;
+    transition: 0.3s;
+    &:hover {
+      color: black;
+    }
+  }
+}

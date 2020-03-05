@@ -1,0 +1,79 @@
+@import '../../../../styles/colors';
+
+.herolist {
+  display: flex;
+  .list {
+    width: 40%;
+    ul {
+      margin: 0;
+      padding: 10px 24px;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        padding: 8px 4px;
+        font-size: 1.4rem;
+        position: relative;
+
+        & .hover-img {
+          display: block;
+          position: absolute;
+          opacity: 0;
+          left: 200px;
+          top: -100%;
+          width: 100px;
+          height: auto;
+          transition: opacity 0.5s;
+
+          & img {
+            position: relative;
+            height: 100%;
+            width: 100%;
+          }
+        }
+        & a span.hero-name {
+          transition: background 0.3s;
+        }
+        &:hover {
+          & a span.hero-name {
+            background: lighten($blue, 30%);
+            // border-bottom: 2px dashed red;
+            color: darken($sea-blue, 10%);
+            border-radius: 5px;
+          }
+
+          & .hover-img {
+            opacity: 1;
+          }
+        }
+
+        & .hero-head,
+        & .hero-no-head {
+          position: absolute;
+          left: -34px;
+          top: 5px;
+          width: auto;
+          height: 24px;
+        }
+        & .hero-no-head {
+          left: -34px;
+        }
+        & a {
+          display: block;
+          & span {
+            padding: 2px 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    max-height: 80vh;
+    & img {
+      height: 100%;
+    }
+  }
+}

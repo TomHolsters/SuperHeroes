@@ -1,0 +1,66 @@
+.input {
+  display: flex;
+  padding: 4px 0;
+  margin: 5px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-width: 35vw;
+
+  & .row {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 0;
+    justify-content: space-between;
+    width: 100%;
+    
+    .col-full {
+      width: 100%;
+      & input,
+      select {
+        padding: 2px 8px;
+        border: none;
+        border-radius: 8px;
+        width: 85%;
+      }
+    }
+    .col {
+      width: 48%;
+      position: relative;
+      display: flex;
+
+      & label {
+        display: inline-block;
+        width: 20%;
+      }
+      & input,
+      select {
+        border: none;
+        border-radius: 8px;
+        padding: 2px 8px;
+        width: 80%;
+        &[type='number'] {
+          width: 50px;
+        }
+      }
+    }
+    &.img-row {
+      display: flex;
+      flex-direction: row;
+      & .col {
+        display: flex;
+        justify-content: center;
+        & .img-preview {
+          max-width: 50%;
+          width: auto;
+          max-height: 100px;
+        }
+      }
+    }
+  }
+  & label {
+    display: inline-block;
+    width: 60px;
+  }
+}

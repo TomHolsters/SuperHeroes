@@ -1,79 +1,61 @@
 @import '../../styles/colors';
 
 $change: 10%;
-$color: lighten($base_color, 30%);
+$color: lighten($base_color, 40%);
 
 .button {
-  background-color: $color;
+  display: inline-block;
   padding: 4px 8px;
-  margin-right: 10px;
-  border: 1px solid $grey;
-  color: darken($blue, 10%);
+  color: lighten($blue, 10%);
   transition: 0.3s;
+  box-shadow: 0 0 0 1px lighten($grey, 25%);
   cursor: pointer;
+  margin-right: 10px;
+  background-color: darken($color, 2.5%);
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 
   &.disabled {
     background: lighten($color, 3.5%);
+    color: lighten($grey, 30%);
+    box-shadow: 0 0 0 1px lighten($grey, 50%);
+    opacity: 0.25;
     cursor: not-allowed;
   }
-  &:not(.disabled) {
-    &:hover {
-      color: darken($blue, 35%);
-      background-color: lighten($color, 3%);
-    }
-    &:active {
-      background-color: lighten($color, 7.5%);
-    }
+  &:hover {
+    color: darken($blue, 15%);
+    box-shadow: 0 0 0 1px darken($grey, 10%);
+    background-color: transparentize(lighten($sea-blue, 20%), 0.75);
   }
+  &:active {
+    box-shadow: 0 0 0 1px darken($sea-green, 10%);
+    background-color: lighten($color, 7.5%);
+  }
+  // }
   &.delete {
-    color: $grey;
-    border-color: darken($red, 5%);
     display: block;
     height: 100%;
     margin-left: -2px;
     position: relative;
-
-    & .button-fill {
-      position: absolute;
-      display: block;
-      overflow: hidden;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
-
-      &:after {
-        content: '';
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 0%;
-        color: lighten($black, 15%);
-        background-color: transparentize(darken($red, 10%), 0.35);
-        transition: 1s;
-        transition: 1s ease-out;
-        // z-index: -1;
-      }
-      &:hover {
-        &:after {
-          width: 105%;
-          color: $black;
-        }
-      }
+    color: lighten($grey, 15%);
+    &:hover {
+      color: lighten($red, 50%);
+      background-color: transparentize(darken($red, 10%), 0.35);
     }
-    & .button-text {
-      position: relative;
-      display: block;
-      overflow: hidden;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      pointer-events: none;
-      z-index: 2;
-    }
+  }
+  & .button-text {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    font-size: 1.4rem;
+    text-align: center;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 2;
   }
 }

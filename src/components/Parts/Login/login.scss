@@ -1,0 +1,25 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .input-field {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+      margin: 5px 0;
+      & label {
+        font-size: 1.4rem;
+        width: 10%;
+      }
+      & input {
+        padding: 2px 8px;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
-import Home from '../Home/Home'
-import HeroList from '../Heroes/HeroList/HeroList'
-import HeroPage from '../Heroes/HeroPage/HeroPage'
-import AboutPage from '../AboutPage/AboutPage'
+import { Switch, Route } from 'react-router-dom'
+import Home from '../Parts/Home/Home'
+import HeroList from '../Parts/Heroes/HeroList/HeroList'
+import HeroPage from '../Parts/Heroes/HeroPage/HeroPage'
+import LoginPage from '../Modal/LoginModal/LoginModal'
 import './page.scss'
 import Crumbs from '../Crumbs/Crumbs'
 
@@ -19,8 +19,8 @@ export default function Page() {
         <Route path='/heroes'>
           <HeroList />
         </Route>
-        <Route path='/about'>
-          <AboutPage />
+        <Route path='/login'>
+          <LoginPage />
         </Route>
         <Route path='/'>
           <Home />

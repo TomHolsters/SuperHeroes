@@ -1,0 +1,49 @@
+@import '../../../styles/colors.scss';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  ul.main-menu {
+    background-color: $base-color;
+    margin: 0;
+    padding: 50px 0;
+    width: 200px;
+    height: 90%;
+    border: 10px solid darken($base-color, 12.5%);
+    transition: 0.3s;
+    &:hover {
+      background-color: lighten($base-color, 2.5%);
+      border: 10px solid darken($base-color, 15%);
+    }
+    & li {
+      font-size: 1.4rem;
+      cursor: pointer;
+      &.menu-item a {
+        padding: 10px 32px;
+        display: block;
+        &:hover {
+          background: darken($base-color, 15%);
+          color: $white;
+        }
+      }
+    }
+  }
+  & .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    font-size: 1.6rem;
+    color: $egg;
+    background: darken($base-color, 20%);
+    padding: 0;
+    cursor: pointer;
+    transition: 0.25s;
+
+    &:hover {
+      background: lighten($base-color, 10%);
+      color: darken(mix($sea-blue, $sea-green, 70%), 10%);
+    }
+  }
+}

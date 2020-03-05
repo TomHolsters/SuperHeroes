@@ -8,12 +8,12 @@ import { Hero } from '../../models/Hero'
 export default function Crumbs() {
   const location = useLocation()
   let locArray = location.pathname.length === 1 ? [''] : location.pathname.split('/');
-  let id = '';
+  let id: string;
 
   const dispatch = useDispatch()
   const hero: Hero = useSelector(state => state.hero)
 
-  useEffect(() => dispatch(heroService.getHero(id)), [id]);
+  if( id && id.trim() !== '') useEffect(() => dispatch(heroService.getHero(id)), [id]);
 
   let path = locArray.map((locEl: string, i: number) => {
     let toText: string
@@ -26,7 +26,7 @@ export default function Crumbs() {
         break
       case 2:
         id = locEl;
-        toText = hero.name;
+        toText = hero.Name;
         break
       }
 
